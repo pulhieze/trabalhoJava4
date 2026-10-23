@@ -1,12 +1,16 @@
 public class Comissionado extends Funcionario {
     
-    int valorProdutosVendidos;
+    private double vendas;
+    private double percentual;
 
-    public Comissionado(double salarioBase) {
-        super(salarioBase);
+    public Comissionado(String nome, double percentual, double vendas) {
+        super(nome);
+        this.vendas = vendas;
+        this.percentual = percentual;
     }
 
-    public double aplicarComissaoVendas(int valorProdutosVendidos, double porcentagemComissao) {
-        return valorProdutosVendidos * (porcentagemComissao / 100);
+    @Override
+    public double getValorPagamento() {
+        return percentual * vendas;
     }
 }

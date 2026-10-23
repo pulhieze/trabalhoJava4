@@ -1,12 +1,13 @@
 public class Assalariado extends Funcionario {
+    private double salarioSemanal;
 
-    public Assalariado(double salarioBase) {
-        super(salarioBase);
+    public Assalariado(String nome, double salarioSemanal) {
+        super(nome);
+        this.salarioSemanal = salarioSemanal;
     }
 
-    public double aplicarHorasExtras(double salarioBase, int horasTrabalhadas, int divisorDeHoras) {
-        double valorHora = salarioBase / divisorDeHoras;
-        double valorUnitario = valorHora * 1.5;
-        return valorUnitario * horasTrabalhadas;
+    @Override
+    public double getValorPagamento() {
+        return salarioSemanal;
     }
 }

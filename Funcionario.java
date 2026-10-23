@@ -1,24 +1,29 @@
-public class Funcionario {
-    private double salarioBase;
-    private int horasExtras;
+public abstract class Funcionario implements Pagavel{
+    private String nome;
     
-    public Funcionario(double salarioBase) {
-        this.salarioBase = salarioBase;
+    public Funcionario(String nome) {
+        this.nome = nome;
     }
 
-    public double getSalarioBase() {
-        return salarioBase;
+    public String getNome() {
+        return nome;
     }
 
-    public int getHorasExtras() {
-        return horasExtras;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public void setHorasExtras(int horasExtras) {
-        this.horasExtras = horasExtras;
+    public boolean teveHoraExtra() {
+        return false;
     }
 
-    public void setSalarioBase(double salarioBase) {
-        this.salarioBase = salarioBase;
+    @Override
+    public double getValorPagamento() {
+        return 0.0;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " | R$" + String.format("%.2f", getValorPagamento());
     }
 }

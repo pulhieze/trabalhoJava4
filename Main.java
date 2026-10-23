@@ -1,10 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        Assalariado funcionario1 = new Assalariado(2000);
+        Assalariado funcionario1 = new Assalariado(2000, 500);
         Comissionado funcionario2 = new Comissionado(0);
         ComissionadoAssalariado funcionario3 = new ComissionadoAssalariado(2000);
 
-        double salarioComHorasExtras = funcionario1.aplicarHorasExtras(2000, 4, 200);
+        double salarioComHorasExtras = funcionario1.getValorPagamento(2000, 4, 200);
 
         System.out.println("Salário bruto de funcionário assalariado: R$" + funcionario1.getSalarioBase());
         System.out.println("Valor das horas extras: R$" + salarioComHorasExtras);

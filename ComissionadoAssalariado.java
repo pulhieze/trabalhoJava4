@@ -1,9 +1,15 @@
-public class ComissionadoAssalariado extends Funcionario{
-    public ComissionadoAssalariado(double salarioBase) {
-        super(salarioBase);
+public class ComissionadoAssalariado extends Comissionado{
+
+    private double salarioBase;
+    private final double  BONUS = 1.10;
+
+    public ComissionadoAssalariado(String nome, double vendas, double percentual, double salarioBase) {
+        super(nome, vendas, percentual);
+        this.salarioBase = salarioBase;
     }
 
-    public double aplicarComissaoVendas(int valorProdutosVendidos, double porcentagemComissao) {
-        return valorProdutosVendidos * (porcentagemComissao / 100);
+    @Override
+    public double getValorPagamento() {
+        return (salarioBase * BONUS) + super.getValorPagamento();
     }
 }
