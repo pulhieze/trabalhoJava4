@@ -1,7 +1,7 @@
 public class ComissionadoAssalariado extends Comissionado{
 
     private double salarioBase;
-    private final double  BONUS = 1.10;
+    private final double BONUS = 1.10;
 
     public ComissionadoAssalariado(String nome, double vendas, double percentual, double salarioBase) {
         super(nome, vendas, percentual);
