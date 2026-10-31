@@ -6,14 +6,16 @@ public class Main {
 
         // Tratamento de Exceção
         try {
-            horista.registrarHorasDeTrabalho(10);
-            horista.registrarHorasDeTrabalho(10);
-            horista.registrarHorasDeTrabalho(10);
-            horista.registrarHorasDeTrabalho(10);
+            horista.registrarHorasExtrasDeTrabalho(10);
+            horista.registrarHorasExtrasDeTrabalho(10);
+            horista.registrarHorasExtrasDeTrabalho(10);
+            horista.registrarHorasExtrasDeTrabalho(10);
 
         } catch (HorasTrabalhadasException e) {
             System.out.println("Erro trabalhista: " + e.getMessage());
         }
+
+        horista.verificarHorasTrabalhadas(8);
 
         ArrayList<Pagavel> folha = new ArrayList<>();
 

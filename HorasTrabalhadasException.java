@@ -3,3 +3,9 @@ public class HorasTrabalhadasException extends Exception {
         super(msg);
     }
 }
+
+class ExcessoDeJornadaException extends Exception {
+    public ExcessoDeJornadaException(String msg) {
+        super(msg);
+    }
+}

@@ -7,13 +7,14 @@ public class Horista extends Funcionario {
     private boolean horasExtrasTrabalhadas;
     private double valorDaHora;
     private double totalDeHoras;
+    private double jornadaDiaria;
 
     public Horista(String nome, double valorDaHora) {
         super(nome);
         this.valorDaHora = valorDaHora;
     }
 
-    public void registrarHorasDeTrabalho(double horasTrabalhadas) throws HorasTrabalhadasException {
+    public void registrarHorasExtrasDeTrabalho(double horasTrabalhadas) throws HorasTrabalhadasException {
         double horasExtras = horasTrabalhadas - HORAS_DE_TRABALHO;
         
         if (horasExtras > LIMITE_EXTRA_DIARIA) {
@@ -35,6 +36,16 @@ public class Horista extends Funcionario {
         }
     }
 
+    public void regitrarJornadaDiaria(double horasTrabalhadas) throws ExcessoDeJornadaException {
+        if (horasTrabalhadas > HORAS_DE_TRABALHO) {
+            throw new ExcessoDeJornadaException(
+                getNome() + " já atingiu a jornada diária de trabalho: " + horasTrabalhadas + " horas"
+            );
+        }
+
+        jornadaDiaria += horasTrabalhadas;
+    }
+
     @Override
     public double getValorPagamento() {
         if (totalDeHoras <= LIMITE_SEMANAL) {
@@ -54,5 +65,9 @@ public class Horista extends Funcionario {
 
     public double getTotalDeHoras() {
         return totalDeHoras;   
+    }
+
+    public double getJornadaDiaria() {
+        return jornadaDiaria;
     }
 }
