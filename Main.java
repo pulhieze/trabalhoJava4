@@ -15,8 +15,6 @@ public class Main {
             System.out.println("Erro trabalhista: " + e.getMessage());
         }
 
-        horista.verificarHorasTrabalhadas(8);
-
         ArrayList<Pagavel> folha = new ArrayList<>();
 
         folha.add(new Assalariado("José", 400));
