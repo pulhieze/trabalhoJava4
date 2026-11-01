@@ -2,20 +2,13 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Horista horista = new Horista("Marcelo", 40);        
-
-        // Tratamento de Exceção
-        try {
-            horista.registrarHorasExtrasDeTrabalho(10);
-            horista.registrarHorasExtrasDeTrabalho(10);
-            horista.registrarHorasExtrasDeTrabalho(10);
-            horista.registrarHorasExtrasDeTrabalho(10);
-
-        } catch (HorasTrabalhadasException e) {
-            System.out.println("Erro trabalhista: " + e.getMessage());
-        }
-
         ArrayList<Pagavel> folha = new ArrayList<>();
+        Horista horista = new Horista("Marcelo", 40);
+        
+        // Tratamento de Exceção
+
+        
+        
 
         folha.add(new Assalariado("José", 400));
         folha.add(new Comissionado("Marcela", 0.05, 30000));
