@@ -7,9 +7,6 @@ public class Main {
         
         // Tratamento de Exceção
 
-        
-        
-
         folha.add(new Assalariado("José", 400));
         folha.add(new Comissionado("Marcela", 0.05, 30000));
         folha.add(new ComissionadoAssalariado("Carla", 35000, 0.05, 2000));
