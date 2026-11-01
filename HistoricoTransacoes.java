@@ -2,5 +2,9 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class HistoricoTransacoes {
-    Deque<Pagavel> stackPagavel = new ArrayDeque<Pagavel>();
+    Deque<Pagavel> pilhaPagavel = new ArrayDeque<Pagavel>();
+
+    public void registrarPilha(Pagavel itemPago) {
+        pilhaPagavel.push(itemPago);
+    }
 }
