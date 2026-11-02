@@ -6,6 +6,14 @@ public class ComissionadoAssalariado extends Comissionado{
     public ComissionadoAssalariado(String nome, double vendas, double percentual, double salarioBase) {
         super(nome, vendas, percentual);
         this.salarioBase = salarioBase;
+
+        if (this.salarioBase < 0) {
+            throw new DadosInvalidosException("Erro: salário não pode ser abaixo de zero");
+        }
+
+        if (vendas < 0) {
+            throw new DadosInvalidosException("Erro: vendas não pode ser abaixo de zero");
+        }
     }
 
     @Override

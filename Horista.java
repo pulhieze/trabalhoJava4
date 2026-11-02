@@ -12,6 +12,10 @@ public class Horista extends Funcionario {
     public Horista(String nome, double valorDaHora) {
         super(nome);
         this.valorDaHora = valorDaHora;
+
+        if (this.valorDaHora < 0) {
+            throw new DadosInvalidosException("Erro: vendas não pode ser abaixo de zero");
+        }
     }
 
     public void registrarHorasExtrasDeTrabalho(double horasTrabalhadas) throws HorasTrabalhadasException {
