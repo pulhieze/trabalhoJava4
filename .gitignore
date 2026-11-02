@@ -8,3 +8,6 @@ HorasTrabalhadasException.class
 Horista.class
 Fatura.class
 ExcessoDeJornadaException.class
+DadosInvalidosException.class
+FalhaProcessamentoFolhaException.class
+
