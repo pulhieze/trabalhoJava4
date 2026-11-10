@@ -6,7 +6,7 @@ public class Comissionado extends Funcionario {
     private double vendas;
     private double percentual;
 
-    public Comissionado(String nome, double percentual, double vendas) {
+    public Comissionado(String nome, double vendas, double percentual) {
         super(nome);
         this.vendas = vendas;
         this.percentual = percentual; // 0.05 -> 5%

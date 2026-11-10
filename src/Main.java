@@ -1,9 +1,9 @@
 package src;
 import java.util.ArrayList;
 
+import src.excecoes.ExcessoDeJornadaException;
 import src.employees.Assalariado;
 import src.employees.Horista;
-import src.excecoes.ExcessoDeJornadaException;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,9 +11,7 @@ public class Main {
         Horista horista = new Horista("Marcelo", 40, 8);
         Assalariado assalariado = new Assalariado("José", 400);
 
-        
-        cenario1(horista, assalariado, folha);
-        
+        cenario1(horista, assalariado, folha);        
     }
 
     public static void cenario1(Horista horista, Assalariado assalariado, ArrayList<Pagavel> folha) {
@@ -22,7 +20,7 @@ public class Main {
         try{
             horista.regitrarJornadaDiaria();
         } catch (ExcessoDeJornadaException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
         
 

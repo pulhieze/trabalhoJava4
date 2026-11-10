@@ -30,6 +30,10 @@ public class Horista extends Funcionario {
             );
         }
 
+        if (jornadaDiaria > HORAS_DE_TRABALHO) {
+           horasExtrasTrabalhadas = true;
+        }
+
         totalDeHoras += jornadaDiaria;
     }
 
