@@ -1,3 +1,7 @@
+package src.employees;
+import src.excecoes.DadosInvalidosException;
+import src.excecoes.ExcessoDeJornadaException;
+
 public class Horista extends Funcionario {
     private static final double HORAS_DE_TRABALHO = 8;
     private static final double LIMITE_EXTRA_DIARIA = 2;
@@ -9,24 +13,24 @@ public class Horista extends Funcionario {
     private double totalDeHoras;
     private double jornadaDiaria;
 
-    public Horista(String nome, double valorDaHora) {
+    public Horista(String nome, double valorDaHora, double jornadaDiaria) {
         super(nome);
+        this.valorDaHora = valorDaHora;
+        this.jornadaDiaria = jornadaDiaria;
 
         if (this.valorDaHora < 0) {
             throw new DadosInvalidosException("Erro: vendas não pode ser abaixo de zero");
-        }
-
-        this.valorDaHora = valorDaHora;
+        } 
     }
 
-    public void regitrarJornadaDiaria(double horasTrabalhadas) throws ExcessoDeJornadaException {
-        if (horasTrabalhadas > HORAS_DE_TRABALHO) {
+    public void regitrarJornadaDiaria() throws ExcessoDeJornadaException {
+        if (jornadaDiaria > (HORAS_DE_TRABALHO + LIMITE_EXTRA_DIARIA)) {
             throw new ExcessoDeJornadaException(
-                getNome() + " já atingiu a jornada diária de trabalho: " + horasTrabalhadas + " horas"
+                getNome() + " já atingiu a jornada diária de trabalho: " + jornadaDiaria + " horas"
             );
         }
 
-        jornadaDiaria += horasTrabalhadas;
+        totalDeHoras += jornadaDiaria;
     }
 
     @Override

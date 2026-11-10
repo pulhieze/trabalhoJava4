@@ -1,3 +1,6 @@
+package src.employees;
+import src.excecoes.DadosInvalidosException;
+
 public class Assalariado extends Funcionario {
     private double salarioSemanal;
 

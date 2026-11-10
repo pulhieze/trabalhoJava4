@@ -1,3 +1,6 @@
+package src.employees;
+import src.excecoes.DadosInvalidosException;
+
 public class Comissionado extends Funcionario {
     
     private double vendas;

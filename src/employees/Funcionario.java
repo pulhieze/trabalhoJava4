@@ -1,3 +1,6 @@
+package src.employees;
+import src.Pagavel;
+
 public abstract class Funcionario implements Pagavel{
     private String nome;
     

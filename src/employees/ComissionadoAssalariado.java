@@ -1,3 +1,6 @@
+package src.employees;
+import src.excecoes.DadosInvalidosException;
+
 public class ComissionadoAssalariado extends Comissionado{
 
     private double salarioBase;

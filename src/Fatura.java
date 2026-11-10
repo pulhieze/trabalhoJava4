@@ -1,3 +1,4 @@
+package src;
 public class Fatura implements Pagavel {
 
     private String descricao;
