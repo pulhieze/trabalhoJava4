@@ -1,9 +1,8 @@
-package src;
 import java.util.ArrayList;
 
-import src.excecoes.ExcessoDeJornadaException;
-import src.employees.Assalariado;
-import src.employees.Horista;
+import excecoes.ExcessoDeJornadaException;
+import employees.Assalariado;
+import employees.Horista;
 
 public class Main {
     public static void main(String[] args) {

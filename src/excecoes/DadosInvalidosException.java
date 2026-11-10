@@ -1,4 +1,4 @@
-package src.excecoes;
+package excecoes;
 
 public class DadosInvalidosException extends IllegalArgumentException {
     public DadosInvalidosException(String msg) {

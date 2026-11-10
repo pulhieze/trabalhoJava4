@@ -1,6 +1,6 @@
-package src.employees;
-import src.excecoes.DadosInvalidosException;
-import src.excecoes.ExcessoDeJornadaException;
+package employees;
+import excecoes.DadosInvalidosException;
+import excecoes.ExcessoDeJornadaException;
 
 public class Horista extends Funcionario {
     private static final double HORAS_DE_TRABALHO = 8;

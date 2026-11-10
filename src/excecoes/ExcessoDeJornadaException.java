@@ -1,4 +1,4 @@
-package src.excecoes;
+package excecoes;
 
 public class ExcessoDeJornadaException extends Exception {
     public ExcessoDeJornadaException(String msg) {
