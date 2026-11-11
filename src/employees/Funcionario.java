@@ -1,5 +1,5 @@
 package employees;
-import Pagavel;
+import pagamento.Pagavel;
 
 public abstract class Funcionario implements Pagavel{
     private String nome;

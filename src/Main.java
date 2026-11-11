@@ -1,8 +1,8 @@
 import java.util.ArrayList;
-
 import excecoes.ExcessoDeJornadaException;
 import employees.Assalariado;
 import employees.Horista;
+import pagamento.Pagavel;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class Main {
     }
 
     public static void cenario1(Horista horista, Assalariado assalariado, ArrayList<Pagavel> folha) {
-        System.out.println("===== FOLHA DE PAGAMENTO =====");
+        System.out.println("========== FOLHA DE PAGAMENTO ==========\n");
 
         try{
             horista.regitrarJornadaDiaria();
