@@ -13,21 +13,21 @@ public class Horista extends Funcionario {
     private double totalDeHoras;
     private double jornadaDiaria;
 
-    public Horista(String nome, double valorDaHora, double jornadaDiaria) {
+    public Horista(String nome, double valorDaHora) {
         super(nome);
         this.valorDaHora = valorDaHora;
-        this.jornadaDiaria = jornadaDiaria;
+        //this.jornadaDiaria = jornadaDiaria;
 
         if (this.valorDaHora < 0) {
             throw new DadosInvalidosException("Erro: vendas não pode ser abaixo de zero");
         } 
     }
 
-    public void regitrarJornadaDiaria() throws ExcessoDeJornadaException {
+    public void regitrarJornadaDiaria(double jornadaDiaria) throws ExcessoDeJornadaException {
+        int dia = 0;
+
         if (jornadaDiaria > (HORAS_DE_TRABALHO + LIMITE_EXTRA_DIARIA)) {
-            throw new ExcessoDeJornadaException(
-                getNome() + " já atingiu a jornada diária de trabalho: " + jornadaDiaria + " horas"
-            );
+            throw new ExcessoDeJornadaException(getNome(), dia, jornadaDiaria, (HORAS_DE_TRABALHO + LIMITE_EXTRA_DIARIA));
         }
 
         if (jornadaDiaria > HORAS_DE_TRABALHO) {

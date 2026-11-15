@@ -7,7 +7,7 @@ import pagamento.Pagavel;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Pagavel> folha = new ArrayList<>();
-        Horista horista = new Horista("Marcelo", 40, 8);
+        Horista horista = new Horista("Marcelo", 40);
         Assalariado assalariado = new Assalariado("José", 400);
 
         cenario1(horista, assalariado, folha);        
@@ -17,7 +17,7 @@ public class Main {
         System.out.println("========== FOLHA DE PAGAMENTO ==========\n");
 
         try{
-            horista.regitrarJornadaDiaria();
+            horista.regitrarJornadaDiaria(8);
         } catch (ExcessoDeJornadaException e) {
             System.out.println(e.getMessage());
         }
@@ -29,5 +29,11 @@ public class Main {
         for (Pagavel pagavel : folha) {
             System.out.println(pagavel);
         }
+    }
+
+    public static void cenario2(Horista horista, Assalariado assalariado, ArrayList<Pagavel> folha) {
+        System.out.println("========== FOLHA DE PAGAMENTO ==========\n");
+
+
     }
 }
