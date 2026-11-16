@@ -3,6 +3,7 @@ import excecoes.ExcessoDeJornadaException;
 import employees.Assalariado;
 import employees.Horista;
 import pagamento.Pagavel;
+import pagamento.ParyrollService;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,9 +32,11 @@ public class Main {
         }
     }
 
-    public static void cenario2(Horista horista, Assalariado assalariado, ArrayList<Pagavel> folha) {
+    public static void cenario2(Horista horista, ArrayList<Pagavel> folha) {
         System.out.println("========== FOLHA DE PAGAMENTO ==========\n");
 
+        ParyrollService service = new ParyrollService();
 
+        
     }
 }

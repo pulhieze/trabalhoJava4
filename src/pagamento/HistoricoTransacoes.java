@@ -4,22 +4,26 @@ import java.util.Deque;
 
 
 public class HistoricoTransacoes {
-    static Deque<Pagavel> pilhaPagavel = new ArrayDeque<Pagavel>();
+    static Deque<Pagavel> historico = new ArrayDeque();
 
-    public void registrarPilha(Pagavel itemPago) {
-        pilhaPagavel.push(itemPago);
+    public void empilhar(Pagavel item) {
+        historico.push(item);
     }
 
-    public int estornar() {
+    public int desempilhar() {
         int estornados = 0;
 
-        while(!pilhaPagavel.isEmpty()) {
-            Pagavel item = pilhaPagavel.pop();
+        while (!historico.isEmpty()) {
+            historico.pop();
             estornados++;
 
-            System.out.println("Estornados: " + item);
+            System.out.println("Itens estornados" + estornados);
         }
 
         return estornados;
+    }
+
+    public int tamanhoHistorico() {
+        return historico.size();
     }
 }

@@ -1,5 +1,7 @@
 package pagamento;
 
+import excecoes.DadosInvalidosException;
+
 public class Fatura implements Pagavel {
 
     private String descricao;
@@ -10,6 +12,14 @@ public class Fatura implements Pagavel {
         this.descricao = descricao;
         this.quantidade = quantidade;
         this.precoUnitario = precoUnitario;
+
+        if (this.quantidade <= 0) {
+            throw new DadosInvalidosException("Erro: quantidade não pode ser menor do que zero");
+        }
+
+        if (this.precoUnitario < 0) {
+            throw new DadosInvalidosException("Erro: preço unitário não pode ser menor que zero");
+        }
     }
 
     @Override

@@ -12,6 +12,7 @@ public class Horista extends Funcionario {
     private double valorDaHora;
     private double totalDeHoras;
     private double jornadaDiaria;
+    private int diasRegistrados;
 
     public Horista(String nome, double valorDaHora) {
         super(nome);
@@ -24,7 +25,7 @@ public class Horista extends Funcionario {
     }
 
     public void regitrarJornadaDiaria(double jornadaDiaria) throws ExcessoDeJornadaException {
-        int dia = 0;
+        int dia = diasRegistrados + 1;
 
         if (jornadaDiaria > (HORAS_DE_TRABALHO + LIMITE_EXTRA_DIARIA)) {
             throw new ExcessoDeJornadaException(getNome(), dia, jornadaDiaria, (HORAS_DE_TRABALHO + LIMITE_EXTRA_DIARIA));
@@ -34,6 +35,7 @@ public class Horista extends Funcionario {
            horasExtrasTrabalhadas = true;
         }
 
+        diasRegistrados = dia;
         totalDeHoras += jornadaDiaria;
     }
 
