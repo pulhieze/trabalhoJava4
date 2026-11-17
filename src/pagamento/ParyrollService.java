@@ -10,7 +10,7 @@ import excecoes.FalhaProcessamentoException;
 public class ParyrollService {
     ArrayList<String> auditoria = new ArrayList<>();
 
-    public void registrarHoraDeTrabalho(Horista horista, int horas) throws FalhaProcessamentoException {
+    public void registrarHoraDeTrabalho(Horista horista, int horas) throws ExcessoDeJornadaException {
         try {
             horista.regitrarJornadaDiaria(horas);
         } catch (ExcessoDeJornadaException e){
@@ -41,9 +41,10 @@ public class ParyrollService {
             System.out.println("Iniciando o Rollback...");
 
             historico.desempilhar();
+            estornadas++;
 
         } finally {
-            System.out.println("Auditoria: ");
+            System.out.println("\nAuditoria: ");
             System.out.println("Operações concluidas: " + concluidas);
             System.out.println("Operações estornadas: " + estornadas);
             System.out.println("Tamanho restante da pilha: " + historico.tamanhoHistorico());
@@ -54,5 +55,9 @@ public class ParyrollService {
         if (item.getValorPagamento() <= 0) {
             throw new DadosInvalidosException("Pagamento inválido (R$ 0,00): " + item);
         }
+    }
+
+    public ArrayList<String> getAuditoria() {
+        return auditoria;
     }
 }
