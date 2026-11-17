@@ -69,6 +69,6 @@ public class Main {
     }
 
     public static void titulo(int numeroTitulo) {
-        System.out.println("\n========== CENARIO " + numeroTitulo + " ==========\n");
+        System.out.println("\n==================== CENARIO " + numeroTitulo + " ====================\n");
     }
 }
